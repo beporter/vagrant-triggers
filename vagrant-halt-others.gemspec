@@ -1,13 +1,13 @@
 $:.unshift File.expand_path("../lib", __FILE__)
-require "vagrant-triggers/version"
+require "vagrant-halt-others/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "vagrant-triggers"
+  spec.name          = "vagrant-halt-others"
   spec.version       = VagrantPlugins::Triggers::VERSION
-  spec.authors       = "Emiliano Ticci"
-  spec.email         = "emiticci@gmail.com"
-  spec.summary       = "Triggers for Vagrant commands."
-  spec.description   = "This plugin allow the definition of arbitrary scripts that will run on the host before and/or after Vagrant commands."
+  spec.authors       = ["Emiliano Ticci", "Brian Porter"]
+  spec.email         = "beporter@users.sourceforge.net"
+  spec.summary       = "Halt other running boxes on `vagrant up`."
+  spec.description   = "This plugin traps the `vagrant up` command, checks for other boxes running via vagrant and issues a `halt` command to each before proceeding with the current request."
   
   # The following block of code determines the files that should be included
   # in the gem. It does this by reading all the files in the directory where

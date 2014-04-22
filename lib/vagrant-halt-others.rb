@@ -1,9 +1,9 @@
 require "pathname"
-require "vagrant-triggers/plugin"
+require "vagrant-halt-others/plugin"
 
 module VagrantPlugins
   module Triggers
-    lib_path = Pathname.new(File.expand_path("../vagrant-triggers", __FILE__))
+    lib_path = Pathname.new(File.expand_path("../vagrant-halt-others", __FILE__))
     autoload :Action,   lib_path.join("action")
     autoload :Config,   lib_path.join("config")
     autoload :Errors,   lib_path.join("errors")
