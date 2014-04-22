@@ -3,7 +3,7 @@ require "vagrant-halt-others/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "vagrant-halt-others"
-  spec.version       = VagrantPlugins::Triggers::VERSION
+  spec.version       = VagrantPlugins::HaltOthers::VERSION
   spec.authors       = ["Emiliano Ticci", "Brian Porter"]
   spec.email         = "beporter@users.sourceforge.net"
   spec.summary       = "Halt other running boxes on `vagrant up`."

@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Triggers
+  module HaltOthers
     module Errors
       class VagrantTriggerError < Vagrant::Errors::VagrantError
         error_namespace("vagrant_triggers.errors")

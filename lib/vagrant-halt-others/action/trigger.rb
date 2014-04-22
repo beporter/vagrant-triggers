@@ -3,7 +3,7 @@ require "shellwords"
 require "vagrant/util/subprocess"
 
 module VagrantPlugins
-  module Triggers
+  module HaltOthers
     module Action
       class Trigger
         def initialize(app, env, condition)

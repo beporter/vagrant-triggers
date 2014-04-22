@@ -2,7 +2,7 @@ require "pathname"
 require "vagrant-halt-others/plugin"
 
 module VagrantPlugins
-  module Triggers
+  module HaltOthers
     lib_path = Pathname.new(File.expand_path("../vagrant-halt-others", __FILE__))
     autoload :Action,   lib_path.join("action")
     autoload :Config,   lib_path.join("config")

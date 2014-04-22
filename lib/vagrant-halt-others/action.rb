@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Triggers
+  module HaltOthers
     module Action
       def self.action_trigger(condition)
         Vagrant::Action::Builder.new.tap do |b|

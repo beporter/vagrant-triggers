@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Triggers
-    VERSION = "0.2.1"
+  module HaltOthers
+    VERSION = "0.1.0"
   end
 end

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe VagrantPlugins::Triggers::Action::Trigger do
+describe VagrantPlugins::HaltOthers::Action::Trigger do
   let(:app)            { lambda { |env| } }
   let(:env)            { { :action_name => action_name, :machine => machine, :machine_action => machine_action, :ui => ui } }
   let(:condition)      { double("condition") }
@@ -70,7 +70,7 @@ describe VagrantPlugins::Triggers::Action::Trigger do
 
     it "should raise an error if executed command exits with non-zero code" do
       result.stub(:exit_code => 1)
-      expect { described_class.new(app, env, condition).call(env) }.to raise_error(VagrantPlugins::Triggers::Errors::CommandFailed)
+      expect { described_class.new(app, env, condition).call(env) }.to raise_error(VagrantPlugins::HaltOthers::Errors::CommandFailed)
     end
 
     it "shouldn't raise an error if executed command exits with non-zero code but :force option was specified" do
@@ -100,12 +100,12 @@ describe VagrantPlugins::Triggers::Action::Trigger do
     end
 
     it "should raise a CommandUnavailable error by default" do
-      expect { described_class.new(app, env, condition).call(env) }.to raise_error(VagrantPlugins::Triggers::Errors::CommandUnavailable)
+      expect { described_class.new(app, env, condition).call(env) }.to raise_error(VagrantPlugins::HaltOthers::Errors::CommandUnavailable)
     end
 
     it "should raise a CommandUnavailable error on Windows" do
       Vagrant::Util::Platform.stub(:windows? => true)
-      expect { described_class.new(app, env, condition).call(env) }.to raise_error(VagrantPlugins::Triggers::Errors::CommandUnavailable)
+      expect { described_class.new(app, env, condition).call(env) }.to raise_error(VagrantPlugins::HaltOthers::Errors::CommandUnavailable)
     end
 
     it "should honor the :append_to_path option and restore original path after execution" do

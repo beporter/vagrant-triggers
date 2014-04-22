@@ -9,3 +9,7 @@ end
 group :test do
   gem "simplecov", :require => false
 end
+
+group :plugins do
+  gem "vagrant-halt-others", path: "."
+end

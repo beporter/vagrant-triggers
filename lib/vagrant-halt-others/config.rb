@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Triggers
+  module HaltOthers
     class Config < Vagrant.plugin("2", :config)
       attr_reader :triggers
       
